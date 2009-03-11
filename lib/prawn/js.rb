@@ -4,6 +4,24 @@ module Prawn
     # The maximum number of children to fit into a single node in the JavaScript tree.
     NAME_TREE_CHILDREN_LIMIT = 20 #:nodoc:
 
+    # add a Javascript fragment that will execute after the document is saved.
+    #
+    # There can only be a single fragment. Calling this function multiple times
+    # will override earlier fragments.
+    #
+    def add_did_save_js(name, script)
+      aa[:DS] = ref(:S => :JavaScript, :JS => script)
+    end
+
+    # add a Javascript fragment that will execute after the document is printed.
+    #
+    # There can only be a single fragment. Calling this function multiple times
+    # will override earlier fragments.
+    #
+    def add_did_print_js(name, script)
+      aa[:DP] = ref(:S => :JavaScript, :JS => script)
+    end
+
     # add a Javascript fragment that will execute when the document is opened.
     #
     # There can only be as many fragments as required. Calling this function
@@ -19,8 +37,26 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_docclose_js(name, script)
+    def add_will_close_js(name, script)
       aa[:WC] = ref(:S => :JavaScript, :JS => script)
+    end
+
+    # add a Javascript fragment that will execute before the document is printed.
+    #
+    # There can only be a single fragment. Calling this function multiple times
+    # will override earlier fragments.
+    #
+    def add_will_print_js(name, script)
+      aa[:WP] = ref(:S => :JavaScript, :JS => script)
+    end
+
+    # add a Javascript fragment that will execute before the document is saved.
+    #
+    # There can only be a single fragment. Calling this function multiple times
+    # will override earlier fragments.
+    #
+    def add_will_save_js(name, script)
+      aa[:WS] = ref(:S => :JavaScript, :JS => script)
     end
 
     private

@@ -6,7 +6,7 @@ require 'prawn/js'
 
 Prawn::Document.generate "js_doc_close.pdf" do
 
-  add_docclose_js("alert", "app.alert('closing',3)")
+  add_will_close_js("alert", "app.alert('closing',3)")
 
   text "Javascript Prototype", :at => [150,720], :size => 32
 
