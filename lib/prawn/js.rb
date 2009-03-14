@@ -11,7 +11,7 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_did_save_js(name, script)
+    def add_did_save_js(script)
       aa[:DS] = ref(:S => :JavaScript, :JS => script)
     end
 
@@ -20,7 +20,7 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_did_print_js(name, script)
+    def add_did_print_js(script)
       aa[:DP] = ref(:S => :JavaScript, :JS => script)
     end
 
@@ -39,7 +39,7 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_will_close_js(name, script)
+    def add_will_close_js(script)
       aa[:WC] = ref(:S => :JavaScript, :JS => script)
     end
 
@@ -48,7 +48,7 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_will_print_js(name, script)
+    def add_will_print_js(script)
       aa[:WP] = ref(:S => :JavaScript, :JS => script)
     end
 
@@ -57,7 +57,7 @@ module Prawn
     # There can only be a single fragment. Calling this function multiple times
     # will override earlier fragments.
     #
-    def add_will_save_js(name, script)
+    def add_will_save_js(script)
       aa[:WS] = ref(:S => :JavaScript, :JS => script)
     end
 
