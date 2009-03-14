@@ -1,5 +1,10 @@
 # encoding: utf-8
-
+#
+# js.rb : Implements embeddable Javascript support for PDF
+#
+# Copyright March 2009, James Healy. All Rights Reserved.
+#
+# This is free software. Please see the LICENSE file for details.
 
 module Prawn
   module JS
