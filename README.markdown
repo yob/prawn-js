@@ -18,7 +18,23 @@ section of this readme.
 
 ## Usage
 
-Still to come.
+Prawn-JS depends on core prawn library, and simply adds a few additional methods to the
+standard Prawn::Document object that allow your Javascript to be associated with certain
+events.
+
+Start by requiring the prawn library, then the prawn-js library. Build your PDF as usual,
+and use methods lke add_docopen_js to register your code fragments.
+
+    require 'prawn'
+    require 'prawn/js'
+
+    Prawn::Document.generate "js_doc_open.pdf" do
+      add_docopen_js("alert", "app.alert('open!',3)")
+      text "Javascript Prototype", :at => [150,720], :size => 32
+    end
+
+For further examples and documentation, check out the examples/ directory of this project
+and the code docs for the Prawn::JS module.
 
 ## Licensing
 
@@ -28,7 +44,6 @@ more detail.
 ## Contributing
 
 All suggestions and patches welcome, preferably via a git repository I can pull from.
-To be honest, I'm not really expecting any, this is a niche library.
 
 ## Further Reading
 
