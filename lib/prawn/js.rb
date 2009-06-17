@@ -72,8 +72,8 @@ module Prawn
     # See section 8.5.2 and table 8.47 of the PDF spec
     #
     def aa
-      # TODO: this entry is only valid in the document catalogue in PDF versions 1.4+.
-      #       We need to ensure the version is set appropriately
+      # this entry is only valid in the document catalogue in PDF versions 1.4+.
+      min_version(1.4)
       @root.data[:AA] ||= {}
     end
 
