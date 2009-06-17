@@ -4,10 +4,10 @@ require 'rubygems'
 require 'prawn/core'
 require 'prawn/js'
 
-Prawn::Document.generate "js_doc_close.pdf" do
+Prawn::Document.generate "js_doc_close.pdf" do |pdf|
 
-  add_will_close_js("alert", "app.alert('closing',3)")
+  pdf.add_will_close_js("alert", "app.alert('closing',3)")
 
-  text "Javascript Prototype", :at => [150,720], :size => 32
+  pdf.text "Javascript Prototype", :at => [150,720], :size => 32
 
 end

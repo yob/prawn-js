@@ -11,7 +11,7 @@ require 'prawn/js'
 # user interaction, see chapter 5 of "Developing Acrobat Applications Using
 # Javascript", available on the Adobe Javascript page.
 #
-Prawn::Document.generate "autoprint.pdf" do
+Prawn::Document.generate "autoprint.pdf" do |pdf|
   # Build the script we want to execute when the document opens
   script = <<-EOF
     var pp = this.getPrintParams();
@@ -20,9 +20,9 @@ Prawn::Document.generate "autoprint.pdf" do
   EOF
 
   # embed our script. The label is arbitary and can be anything
-  add_docopen_js("somelabel", script)
+  pdf.add_docopen_js("somelabel", script)
 
   # finally add some real content to the page so something gets printed.
-  text "Javascript Prototype", :at => [150,720], :size => 32
+  pdf.text "Javascript Prototype", :at => [150,720], :size => 32
 
 end

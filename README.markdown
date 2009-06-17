@@ -28,9 +28,9 @@ and use methods lke add_docopen_js to register your code fragments.
     require 'prawn/core'
     require 'prawn/js'
 
-    Prawn::Document.generate "js_doc_open.pdf" do
-      add_docopen_js("alert", "app.alert('open!',3)")
-      text "Javascript Prototype", :at => [150,720], :size => 32
+    Prawn::Document.generate "js_doc_open.pdf" do |pdf|
+      pdf.add_docopen_js("alert", "app.alert('open!',3)")
+      pdf.text "Javascript Prototype", :at => [150,720], :size => 32
     end
 
 For further examples and documentation, check out the examples/ directory of this project
