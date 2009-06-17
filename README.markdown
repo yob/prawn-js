@@ -25,7 +25,7 @@ associated with certain events.
 Start by requiring the prawn library, then the prawn-js library. Build your PDF as usual,
 and use methods like add_docopen_js to register your code fragments.
 
-    require 'prawn/core'
+    require 'prawn'
     require 'prawn/js'
 
     Prawn::Document.generate "js_doc_open.pdf" do |pdf|
