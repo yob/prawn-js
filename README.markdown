@@ -18,9 +18,9 @@ section of this readme.
 
 ## Usage
 
-Prawn-JS depends on core prawn library, and simply adds a few additional methods to the
-standard Prawn::Document object that allow your Javascript to be associated with certain
-events.
+Prawn-JS depends on the core prawn library, and simply adds a few additional
+methods to the standard Prawn::Document object that allow your Javascript to be
+associated with certain events.
 
 Start by requiring the prawn library, then the prawn-js library. Build your PDF as usual,
 and use methods lke add_docopen_js to register your code fragments.
