@@ -23,7 +23,7 @@ methods to the standard Prawn::Document object that allow your Javascript to be
 associated with certain events.
 
 Start by requiring the prawn library, then the prawn-js library. Build your PDF as usual,
-and use methods lke add_docopen_js to register your code fragments.
+and use methods like add_docopen_js to register your code fragments.
 
     require 'prawn/core'
     require 'prawn/js'
@@ -35,6 +35,26 @@ and use methods lke add_docopen_js to register your code fragments.
 
 For further examples and documentation, check out the examples/ directory of this project
 and the code docs for the Prawn::JS module.
+
+For general information on the syntax of JavaScript, I highly recommend
+"JavaScript: The Good Parts" by Douglas Crockford, ISBN: 9780596517748.
+
+For specific information on Adobe's extensions to JavaScript, in particular the
+objects they provide for interacting with your document and the application
+(somewhat similar to the DOM provided to Javascript in web browsers) read the
+documents available on Adobe's JavaScript site (see links below). Look for
+"JavaScript for Acrobat API Reference" and "Developing Acrobat Applications
+Using JavaScript".
+
+## Disclaimer
+
+I haven't yet found a situation where I've wanted to embed JS in my documents.
+Most viewers ignore it and few users demand it.
+
+This extension was more or less thrown together as a proof of concept. I'm
+happy to review any patches that are submitted, but I not planning to actively
+develop it. I'm releasing it because the code was getting lonely sitting on my
+laptop. if there's one thing I hate it's lonely code.
 
 ## Licensing
 
