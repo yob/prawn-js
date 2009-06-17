@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 
 require 'rubygems'
-require 'prawn'
+require 'prawn/core'
 require 'prawn/js'
 
 Prawn::Document.generate "js_doc_save.pdf" do
