@@ -19,7 +19,7 @@ module Prawn
     # will override earlier fragments.
     #
     def add_did_save_js(script)
-      aa[:DS] = ref(:S => :JavaScript, :JS => script)
+      aa[:DS] = ref!(:S => :JavaScript, :JS => script)
     end
 
     # add a Javascript fragment that will execute after the document is printed.
@@ -28,7 +28,7 @@ module Prawn
     # will override earlier fragments.
     #
     def add_did_print_js(script)
-      aa[:DP] = ref(:S => :JavaScript, :JS => script)
+      aa[:DP] = ref!(:S => :JavaScript, :JS => script)
     end
 
     # add a Javascript fragment that will execute when the document is opened.
@@ -37,7 +37,7 @@ module Prawn
     # multiple times will append the new fragment to the list.
     #
     def add_docopen_js(name, script)
-      obj = ref(:S => :JavaScript, :JS => script)
+      obj = ref!(:S => :JavaScript, :JS => script)
       javascript.data.add(name, obj)
     end
 
@@ -47,7 +47,7 @@ module Prawn
     # will override earlier fragments.
     #
     def add_will_close_js(script)
-      aa[:WC] = ref(:S => :JavaScript, :JS => script)
+      aa[:WC] = ref!(:S => :JavaScript, :JS => script)
     end
 
     # add a Javascript fragment that will execute before the document is printed.
@@ -56,7 +56,7 @@ module Prawn
     # will override earlier fragments.
     #
     def add_will_print_js(script)
-      aa[:WP] = ref(:S => :JavaScript, :JS => script)
+      aa[:WP] = ref!(:S => :JavaScript, :JS => script)
     end
 
     # add a Javascript fragment that will execute before the document is saved.
@@ -65,7 +65,7 @@ module Prawn
     # will override earlier fragments.
     #
     def add_will_save_js(script)
-      aa[:WS] = ref(:S => :JavaScript, :JS => script)
+      aa[:WS] = ref!(:S => :JavaScript, :JS => script)
     end
 
     private
@@ -83,7 +83,7 @@ module Prawn
     # See section 3.6.3 and table 3.28 in the PDF spec.
     #
     def javascript
-      names.data[:JavaScript] ||= ref(Prawn::NameTree::Node.new(self, NAME_TREE_CHILDREN_LIMIT))
+      names.data[:JavaScript] ||= ref!(Prawn::NameTree::Node.new(self, NAME_TREE_CHILDREN_LIMIT))
     end
 
   end
