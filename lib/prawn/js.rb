@@ -6,8 +6,6 @@
 #
 # This is free software. Please see the LICENSE file for details.
 
-gem "prawn", ">= 0.5"
-
 module Prawn
   module JS
     # The maximum number of children to fit into a single node in the JavaScript tree.
