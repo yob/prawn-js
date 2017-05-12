@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{prawn}
   s.summary = %q{A small extension to prawn that makes it possible to embed JavaScript fragment in  your document that respond to events.}
-  s.add_dependency('prawn-core', '>=0.6.1')
+  s.add_dependency('pdf-core', '>=0.7.0')
 end

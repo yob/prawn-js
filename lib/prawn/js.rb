@@ -5,6 +5,7 @@
 # Copyright March 2009, James Healy. All Rights Reserved.
 #
 # This is free software. Please see the LICENSE file for details.
+require 'pdf/core/utils'
 
 module Prawn
   module JS
@@ -81,11 +82,11 @@ module Prawn
     # See section 3.6.3 and table 3.28 in the PDF spec.
     #
     def javascript
-      names.data[:JavaScript] ||= ref!(Prawn::NameTree::Node.new(self, NAME_TREE_CHILDREN_LIMIT))
+      names.data[:JavaScript] ||= ref!(PDF::Core::NameTree::Node.new(self, NAME_TREE_CHILDREN_LIMIT))
     end
 
   end
 end
 
-require 'prawn/document'
-Prawn::Document.send(:include, Prawn::JS)
+require 'pdf/core'
+PDF::Core::Renderer.send(:include, Prawn::JS)
